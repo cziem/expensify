@@ -22,7 +22,7 @@ const expenseTwo = store.dispatch(
 store.dispatch(setTextFilter("gas"));
 
 setTimeout(() => {
-  store.dispatch(setTextFilter("Water"));
+  store.dispatch(setTextFilter("bill"));
 }, 3000);
 
 const state = store.getState();
