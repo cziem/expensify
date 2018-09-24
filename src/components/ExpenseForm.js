@@ -24,7 +24,7 @@ export default class ExpenseForm extends Component {
 
   onAmountChange = (e) => {
     const amount = e.target.value
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
         this.setState(() => ({ amount }))
       }
   }
@@ -60,7 +60,8 @@ export default class ExpenseForm extends Component {
             onDateChange={this.onDateChange}
             focused={this.state.calenderFocused}
             onFocusChange={this.onFocusChange}
-            id="123"
+            numberOfMonths={1}
+            isOutsideRange={() => false}
           />
           <textarea
             placeholder='Add a note for your expense (optional)'
