@@ -24,17 +24,18 @@ export default class ExpenseForm extends Component {
 
   onAmountChange = (e) => {
     const amount = e.target.value
-  if (amount.match(/^\d*(\.\d{0,2})?$/)) {
-      this.setState(() => ({ amount }))
-    }
+    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+        this.setState(() => ({ amount }))
+      }
   }
 
   onDateChange = (createdAt) => {
     this.setState(() => ({ createdAt }))
+    
   }
 
-  onFocusChange = ({ focus }) => {
-    this.setState(() => ({ calenderFocused: focus }))
+  onFocusChange = ({ focused }) => {
+    this.setState(() => ({ calenderFocused: focused }))
   }
 
   render() {
@@ -57,8 +58,9 @@ export default class ExpenseForm extends Component {
           <SingleDatePicker
             date={this.state.createdAt}
             onDateChange={this.onDateChange}
-            focus={this.state.calenderFocused}
+            focused={this.state.calenderFocused}
             onFocusChange={this.onFocusChange}
+            id="123"
           />
           <textarea
             placeholder='Add a note for your expense (optional)'
