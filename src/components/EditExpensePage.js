@@ -1,11 +1,16 @@
 import React from "react";
 import { connect } from 'react-redux'
+import ExpenseForm from './ExpenseForm'
 
 const EditExpensePage = props => {
-  console.log(props)
   return (
     <div>
-      <p>Editing the expense with an id of {props.match.params.id}</p>
+      <ExpenseForm 
+        expense={props.expense}
+        onSubmit={(expense) => {
+          console.log('updated', expense)
+        }}
+      />
     </div>
   )
 };
